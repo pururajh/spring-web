@@ -1,4 +1,4 @@
-package com.boot.web.rest.service;
+package com.gf.web.rest.service;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

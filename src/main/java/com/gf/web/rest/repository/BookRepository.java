@@ -8,8 +8,6 @@ import com.gf.web.rest.model.Booking;
 @Repository
 public interface BookRepository extends MongoRepository<Booking, String> {
 	
-	public Booking save(Booking book);
-	
 	//public void retrieveBooking(Integer id);
 
 	/*@Override

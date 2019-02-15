@@ -1,9 +1,12 @@
-package com.boot.web.rest.service;
+package com.gf.web.rest.controller;
+
+import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,18 +15,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gf.web.rest.model.Booking;
 import com.gf.web.rest.repository.BookRepository;
+import com.gf.web.rest.service.BookService;
 
 @RestController
 @RequestMapping("/gadgetfree")
-public class GFService {
+public class GFController {
 	
 	@Autowired
-	private BookRepository bookRepository;
+	private BookService bookService;
 	
-	@GetMapping("book")
-	@RequestMapping(method =  RequestMethod.POST)
-	public Booking book(@RequestBody @Valid Booking book) {
-		return bookRepository.save(book);
+	@PostMapping("book")
+	public void book(Booking book) {
+		bookService.createBooking(book);
+	}
+	
+	@GetMapping("getBooking")
+    public List<Booking> findAll() {
+        return bookService.findAllBooking();
+    }
+	
+	@GetMapping("hello")
+	public String hello() {
+		return "Hello ms";
 	}
 	
 	/*@RequestMapping(method = RequestMethod.POST)
