@@ -9,12 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gf.web.rest.model.Booking;
-import com.gf.web.rest.repository.BookRepository;
 import com.gf.web.rest.service.BookService;
 
 @RestController
@@ -25,7 +22,9 @@ public class GFController {
 	private BookService bookService;
 	
 	@PostMapping("book")
-	public void book(Booking book) {
+	public void book(@RequestBody @Valid Booking book) {
+		/*Gson gson = new Gson();
+		NameList nameList = gson.fromJson(data, NameList.class);*/
 		bookService.createBooking(book);
 	}
 	

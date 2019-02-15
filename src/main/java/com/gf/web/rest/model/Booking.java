@@ -19,6 +19,36 @@ public class Booking {
 	@Field("activityName")
 	private String activityName;
 	
+	public Booking() {
+		
+	}
+	
+	public Booking(String loc, String instName, String actName) {
+		this.location = loc;
+		this.instructorName = instName;
+		this.activityName = actName;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getInstructorName() {
+		return instructorName;
+	}
+	public void setInstructorName(String instructorName) {
+		this.instructorName = instructorName;
+	}
+	public String getActivityName() {
+		return activityName;
+	}
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
+	}
+	
+	
+	
 	
 
 }
